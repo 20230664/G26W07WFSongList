@@ -35,20 +35,22 @@
             btnAdd = new Button();
             txtSelected = new TextBox();
             btnDelete = new Button();
+            txtFilter = new TextBox();
             SuspendLayout();
             // 
             // listSong
             // 
             listSong.FormattingEnabled = true;
-            listSong.Location = new Point(12, 12);
+            listSong.Location = new Point(12, 41);
             listSong.Name = "listSong";
             listSong.Size = new Size(474, 274);
             listSong.TabIndex = 0;
             listSong.SelectedIndexChanged += OnChanged;
+            listSong.DoubleClick += OnYouTube;
             // 
             // txtTitle
             // 
-            txtTitle.Location = new Point(12, 292);
+            txtTitle.Location = new Point(12, 321);
             txtTitle.Name = "txtTitle";
             txtTitle.PlaceholderText = "제목";
             txtTitle.Size = new Size(198, 23);
@@ -56,7 +58,7 @@
             // 
             // txtArtist
             // 
-            txtArtist.Location = new Point(216, 292);
+            txtArtist.Location = new Point(216, 321);
             txtArtist.Name = "txtArtist";
             txtArtist.PlaceholderText = "가수";
             txtArtist.Size = new Size(101, 23);
@@ -64,7 +66,7 @@
             // 
             // txtRating
             // 
-            txtRating.Location = new Point(323, 292);
+            txtRating.Location = new Point(323, 321);
             txtRating.MaxLength = 1;
             txtRating.Name = "txtRating";
             txtRating.PlaceholderText = "별점";
@@ -73,7 +75,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(396, 291);
+            btnAdd.Location = new Point(396, 320);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(90, 23);
             btnAdd.TabIndex = 4;
@@ -84,7 +86,7 @@
             // txtSelected
             // 
             txtSelected.Enabled = false;
-            txtSelected.Location = new Point(12, 321);
+            txtSelected.Location = new Point(12, 350);
             txtSelected.Name = "txtSelected";
             txtSelected.PlaceholderText = "삭제를 위해 선택된 노래";
             txtSelected.ReadOnly = true;
@@ -95,7 +97,7 @@
             // btnDelete
             // 
             btnDelete.Enabled = false;
-            btnDelete.Location = new Point(396, 321);
+            btnDelete.Location = new Point(396, 350);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(90, 23);
             btnDelete.TabIndex = 6;
@@ -103,11 +105,20 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += OnDelete;
             // 
+            // txtFilter
+            // 
+            txtFilter.Location = new Point(12, 12);
+            txtFilter.Name = "txtFilter";
+            txtFilter.Size = new Size(474, 23);
+            txtFilter.TabIndex = 7;
+            txtFilter.TextChanged += OnFilterChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(498, 353);
+            ClientSize = new Size(498, 403);
+            Controls.Add(txtFilter);
             Controls.Add(btnDelete);
             Controls.Add(txtSelected);
             Controls.Add(btnAdd);
@@ -130,5 +141,6 @@
         private Button btnAdd;
         private TextBox txtSelected;
         private Button btnDelete;
+        private TextBox txtFilter;
     }
 }
